@@ -49,12 +49,14 @@
         - time.sleep(secs)
 
 - 브레드보드(가로로 연결되어 있음)
+    - (-) : GRD 연결
+    - (+) : 핀 연결
 
     <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi001.png?token=GHSAT0AAAAAACSM5LEPLWY2B73KWTTI4SL6ZTUY2AA" width="400" alt="브레드보드">
 
     <!-- ![브레드보드](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi001.png?token=GHSAT0AAAAAACSM5LEPLWY2B73KWTTI4SL6ZTUY2AA) -->
 
-- LED &rarr; led01.py, led02.py
+- LED
     - VCC : 전압(Volt) &rarr; 전원이 공급되는 핀
         - 5V &rarr; LED &rarr; GND
             - 5V에 연결하면 전류가 나와서
@@ -62,7 +64,11 @@
             - 그라운드로 흐른다
                 - 5V의 전류가 GND(0V)와의 전압차로 흐르기 때문에 LED의 R, G, B를 GND에 연결하면 해당 LED의 상태가 ON/OFF 된다
 
-- 스위치(Switch) &rarr; input01.py ~ input04.py
+    - 실습
+        - LED : LED ON &rarr; led01.py
+        - LED : 1초마다 LED 색상 변환 &rarr; led02.py
+
+- 스위치(Switch)
     - 저항 : 전류의 흐름을 방해하는 역할
     - 플로팅 상태(Floating)
         - High(1)도 Low(0)도 아닌 그 중간의 전압상태
@@ -90,21 +96,50 @@
         | :---: | :---: | :---: |
         | 풀업 저항<br>(Pull - up) | OFF(0)<br>- - - - -<br>ON(1) | HIGH(1)<br>- - - - -<br>LOW(0) |
         | 풀다운 저항<br>(Pull - down) | OFF(0)<br>- - - - -<br>ON(1) | LOW(0)<br>- - - - -<br>HIGH(1) |
+    - 실습
+        - 스위치 : 스위치 입력시 문자출력 &rarr; input01.py
+        - 스위치 + LED : 스위치 입력마다 LED 색상 변환 &rarr; input02.py
+        - 스위치(키보드) + LED : 키보드의 o/x 입력시 LED on/off &rarr; input03.py
 
 - 인터룹트(interrupt) &rarr; inter01.py (에러)
     - 어떤 상황에서도 제일 우선적으로 실행되는 동작
 
 
-- 피에조 부저 &rarr; pwm01.py, input04.py
-    - 마이너스 연결 : GRD 연결
-    - 플러스 : 주파수를 발생시킬 핀 연결
-    
-    <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi004.png?token=GHSAT0AAAAAACSM5LEO226FIN546UIZBGKQZTUY5IQ" width="600" alt="피에조 주파수">
+- 피에조 부저
+    - PWM(Pulse Width Modulation) : 디지털 신호를 아날로그 신호처럼 동작시키는 기능
+    - Duty Cycle : 주기적으로 장치가 on/off되는 시간의 비율  
+        &rarr; 5V의 duty cycle이 50%면 2.5V의 효과를 나타냄
+
+    - 실습
+        - 피에조 부저 : 디지털 음계 출력 &rarr; pwm01.py
+        - 피에조부저 + 스위치(키보드) : 키보드(1~8)키로 디지털 음계 출력 &rarr; input04.py
+
+            ```python
+            # 디지털 음계 (Hz)
+            piezoPin = 13
+            melody = [262, 294, 330, 349, 392, 440, 494, 524]
+            # 아날로그 출력을 위한 PWM 객체생성(440HZ 출력)
+            Buzz = GPIO.PWM(piezoPin, 440) 
+
+            try:
+                while Ture:
+                    a = input('키 입력 >> ')
+                    if a == '1': # 입력한 키가 1이면
+                        Buzz.start(50) # 부저음 시작. duty cycle: 50(%)
+                        Buzz.ChangeFrequency(melody[0]) # 부저음을 melody[0]으로 변환(출력)
+                        time.sleep(0.1) # 0.1초의 딜레이
+                        Buzz.stop() # 부저음 종료
+            ```
+
+            <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi004.png?token=GHSAT0AAAAAACSM5LEO226FIN546UIZBGKQZTUY5IQ" width="600" alt="피에조 주파수">
 
     <!-- ![피에조 주파수](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi004.png?token=GHSAT0AAAAAACSM5LEO226FIN546UIZBGKQZTUY5IQ) -->
 
 ## 2일차(24.06.21)
-- 적외선 센서 &rarr; pir01.py, pir02.py
+- 적외선 센서
+    - 실습
+        - 적외선센서 : 물체 감지 &rarr; pir01.py
+        - 적외선센서 + LED : 현관문(or 화장실) 센서기능 &rarr; pir02.py
 
 - 가상환경 env
     - 생성방법 : python -m venv env
@@ -126,5 +161,10 @@
     <!-- led에 불이 계속 들어올 경우, 해당 핀의 V 상태 확인 후 코드상에서 Ture로 초기화 -->
     ```
 
-- 초음파센서 &rarr; ultra01.py
+    ![연결상태](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi006.png?token=GHSAT0AAAAAACSM5LEP3SB2BOTR5EADT3FCZTU7ULA)
+
+- 초음파센서
     - time.time() : 현재시간
+    - 실습
+        - 초음파센서 : 거리감지 &rarr; ultra01.py
+        - 초음파센서 + 피에조부저 + LED : 차량 후방감지센서 기능 &rarr; ultra02.py
