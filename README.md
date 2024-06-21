@@ -54,7 +54,7 @@
 
     <!-- ![브레드보드](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi001.png?token=GHSAT0AAAAAACSM5LEPLWY2B73KWTTI4SL6ZTUY2AA) -->
 
-- LED
+- LED &rarr; led01.py, led02.py
     - VCC : 전압(Volt) &rarr; 전원이 공급되는 핀
         - 5V &rarr; LED &rarr; GND
             - 5V에 연결하면 전류가 나와서
@@ -62,7 +62,7 @@
             - 그라운드로 흐른다
                 - 5V의 전류가 GND(0V)와의 전압차로 흐르기 때문에 LED의 R, G, B를 GND에 연결하면 해당 LED의 상태가 ON/OFF 된다
 
-- 스위치(Switch)
+- 스위치(Switch) &rarr; input01.py ~ input04.py
     - 저항 : 전류의 흐름을 방해하는 역할
     - 플로팅 상태(Floating)
         - High(1)도 Low(0)도 아닌 그 중간의 전압상태
@@ -91,11 +91,11 @@
         | 풀업 저항<br>(Pull - up) | OFF(0)<br>- - - - -<br>ON(1) | HIGH(1)<br>- - - - -<br>LOW(0) |
         | 풀다운 저항<br>(Pull - down) | OFF(0)<br>- - - - -<br>ON(1) | LOW(0)<br>- - - - -<br>HIGH(1) |
 
-- 인터룹트(interrupt)
+- 인터룹트(interrupt) &rarr; inter01.py (에러)
     - 어떤 상황에서도 제일 우선적으로 실행되는 동작
 
 
-- 피에조 부저
+- 피에조 부저 &rarr; pwm01.py, input04.py
     - 마이너스 연결 : GRD 연결
     - 플러스 : 주파수를 발생시킬 핀 연결
     
@@ -104,15 +104,16 @@
     <!-- ![피에조 주파수](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi004.png?token=GHSAT0AAAAAACSM5LEO226FIN546UIZBGKQZTUY5IQ) -->
 
 ## 2일차(24.06.21)
-- 적외선 센서
+- 적외선 센서 &rarr; pir01.py, pir02.py
 
 - 가상환경 env
     - 생성방법 : python -m venv env
     - 접속방법 : source ./env/bin/activate
+        - 접속시 경로 앞에 (env) 붙음
         - 이후 실행은 똑같음
     - 종료방법 : deactivate
 
-    ![가상환경](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi005.png)
+    ![가상환경](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi005.png?token=GHSAT0AAAAAACSM5LEOLIWKBZAQDB5PNLIIZTU6BKQ)
 
 - 연결상태 확인방법
 
@@ -125,5 +126,5 @@
     <!-- led에 불이 계속 들어올 경우, 해당 핀의 V 상태 확인 후 코드상에서 Ture로 초기화 -->
     ```
 
-- 초음파센서
+- 초음파센서 &rarr; ultra01.py
     - time.time() : 현재시간
