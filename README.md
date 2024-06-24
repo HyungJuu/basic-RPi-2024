@@ -52,7 +52,7 @@
     - (-) : GRD 연결
     - (+) : 핀 연결
 
-    <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi001.png?token=GHSAT0AAAAAACSM5LEPLWY2B73KWTTI4SL6ZTUY2AA" width="400" alt="브레드보드">
+    <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi001.png" width="400" alt="브레드보드">
 
     <!-- ![브레드보드](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi001.png?token=GHSAT0AAAAAACSM5LEPLWY2B73KWTTI4SL6ZTUY2AA) -->
 
@@ -79,7 +79,7 @@
             &rarr; 스위치를 누르지 않았을 때, 평상시 1(VCC에서 나온 전류)  
             &rarr; 스위치를 눌렀을 때, 0 (GND와 연결되면서 VCC와 INPUT에서 나온 전류가 모두 0V인 GND로 흐름 &rarr; LOW)  
 
-            <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi002.png?token=GHSAT0AAAAAACSM5LEPF2ZLAD74EHKQYYBGZTUY5DA" width="500" alt="풀업 저항의 도식화">
+            <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi002.png" width="500" alt="풀업 저항의 도식화">
 
             <!-- ![풀업 저항의 도식화](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi002.png?token=GHSAT0AAAAAACSM5LEPF2ZLAD74EHKQYYBGZTUY5DA) -->
 
@@ -88,7 +88,7 @@
             &rarr; 스위치를 누르지 않았을 때, 평상시 0 (0V인 GRN와 연결되어 전류가 흘러감)  
             &rarr; 스위치를 눌렀을 때, 1 (GND 앞의 저항보다 낮은 INPUT방향으로 전류가 흐름)  
 
-            <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi003.png?token=GHSAT0AAAAAACSM5LEP54OQWD44PFNF4LPOZTUY5GQ" width="500" alt="풀다운 저항의 도식화">
+            <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi003.png" width="500" alt="풀다운 저항의 도식화">
 
             <!-- ![풀다운 저항의 도식화](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi003.png) -->
 
@@ -131,7 +131,7 @@
                         Buzz.stop() # 부저음 종료
             ```
 
-            <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi004.png?token=GHSAT0AAAAAACSM5LEO226FIN546UIZBGKQZTUY5IQ" width="600" alt="피에조 주파수">
+            <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi004.png" width="600" alt="피에조 주파수">
 
     <!-- ![피에조 주파수](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi004.png?token=GHSAT0AAAAAACSM5LEO226FIN546UIZBGKQZTUY5IQ) -->
 
@@ -148,7 +148,7 @@
         - 이후 실행은 똑같음
     - 종료방법 : deactivate
 
-    ![가상환경](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi005.png?token=GHSAT0AAAAAACSM5LEOLIWKBZAQDB5PNLIIZTU6BKQ)
+    ![가상환경](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi005.png)
 
 - 연결상태 확인방법
 
@@ -161,7 +161,7 @@
     <!-- led에 불이 계속 들어올 경우, 해당 핀의 V 상태 확인 후 코드상에서 Ture로 초기화 -->
     ```
 
-    ![연결상태](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi006.png?token=GHSAT0AAAAAACSM5LEP3SB2BOTR5EADT3FCZTU7ULA)
+    ![연결상태](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi006.png)
 
 - 초음파센서
     - time.time() : 현재시간
@@ -172,9 +172,45 @@
 ## 3일차(24.06.24)
 - 1채널 릴레이(Relay) 모듈
     - 실습
-        - 릴레이모듈 + LED &rarr; relay01.py
+        - 릴레이모듈(NO 연결) + LED &rarr; relay01.py
+
+            ![연결상태](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi007.png)
+
 
 - 스텝모터
     - 실습
         - 스텝모터 &rarr; step01.py
 
+- 웹서버
+    - 실습
+        - flask01.py
+        - flask02.py
+        - 라우터 + LED &rarr; flask03.py
+            - 기억할 것❗❗
+                ```
+                - LED에 연결된 VCC = 5V (+)
+                - 핀은 (-)에 연결된다
+                - 실행시 LED의 불이 꺼져있는 상태로 실행하려면..
+                - LED에 연결된 전원(+)과의 전압차를 0으로 만들어야 한다 -> 1(+)
+                - LED를 키고싶으면 전압차를 만들어준다 -> 0(-)
+                ```
+                ```python
+                GPIO.output(led, 1) # 전압차 x -> OFF
+                GPIO.output(led, 0) # 전압차 o -> ON
+                ```
+        - 앞의 파일 변형 &rarr; flask04.py
+        - flask05.py
+        - 192.168.5.3:10011/?이름=user&주소=부산 : get방식 &rarr; flask06.py
+            - ? 를 기준으로 key=value 형태로 입력
+            - 연결은 & 연산자 사용
+
+                ![실행결과](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi008.png)
+
+- 모듈설치
+    ```
+    > pip install flask
+    ```
+- 시스템 패키지 포함된 가상환경 생성
+    ``` 
+    > python -m venv --system-site-packages env
+    ```
