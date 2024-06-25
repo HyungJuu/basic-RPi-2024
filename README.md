@@ -171,6 +171,9 @@
 
 ## 3일차(24.06.24)
 - 1채널 릴레이(Relay) 모듈
+    - 전자석의 원리로, 전류가 흐르면 자기장을 형성해 자석을 끌어 당겼다가, 흐르지 않으면 자석을 놓는 원리 &rarr; 스위치 역할(자동)
+    - 낮은 전압으로 높은 전압을 제어하는데 많이 사용
+
     - 실습
         - 릴레이모듈(NO 연결) + LED &rarr; relay01.py
 
@@ -178,6 +181,12 @@
 
 
 - 스텝모터
+    - 펄스모양의 전압에 의해 일정 각도(스텝 수)만큼 회전하는 모터
+    - 회전각도는 입력 펄스신호의 수에 비례
+    - 회전속도 : 입력 펄스신호의 주파수에 비례
+
+        ![스텝모터 드라이버](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi009.png)
+
     - 실습
         - 스텝모터 &rarr; step01.py
 
@@ -185,6 +194,9 @@
     - 실습
         - flask01.py
         - flask02.py
+
+            ![flask02.py 실행결과](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi008.png)
+
         - 라우터 + LED &rarr; flask03.py
             - 기억할 것❗❗
                 ```
@@ -214,3 +226,8 @@
     ``` 
     > python -m venv --system-site-packages env
     ```
+
+## 4일차
+- 웹서버
+    - 실습
+        - HTML
