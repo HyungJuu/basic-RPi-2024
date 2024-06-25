@@ -23,7 +23,7 @@ try:
 			print(now)
 			fileName = now.strftime("%Y-%m-%d %H:%M:%S")
 			picam2.capture_file(fileName + ".jpg")
-
+			print("Click!")
 		time.sleep(0.2)
 
 except KeyboardInterrupt:
