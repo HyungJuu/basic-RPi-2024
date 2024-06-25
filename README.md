@@ -216,8 +216,8 @@
         - 192.168.5.3:10011/?이름=user&주소=부산 : get방식 &rarr; flask06.py
             - ? 를 기준으로 key=value 형태로 입력
             - 연결은 & 연산자 사용
-
-                ![실행결과](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi008.png)
+                
+                ![flask06.py 실행결과](https://ra.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi010.png)
 
 - 모듈설치(아래의 가상환경 생성시 포함)
     ```
