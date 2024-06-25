@@ -232,7 +232,7 @@
 - 웹서버
     - 실습
         - HTML 추가 &rarr; flask07.py
-            - 웹 / 모바일 가능
+            - 웹 / 모바일 가능(모바일 연결시 같은공유기로 접속)
 
             https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
         
@@ -241,3 +241,5 @@
         - cam01.py
 
             https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
+
+        - 스위치 : 스위치 클릭을 통해 현재시간으로 사진 저장 &rarr; cam02.py
