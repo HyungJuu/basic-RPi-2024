@@ -239,7 +239,4 @@
 - 카메라
     - 실습
         - cam01.py
-
-            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
-
         - 스위치 : 스위치 클릭을 통해 현재시간으로 사진 저장 &rarr; cam02.py
