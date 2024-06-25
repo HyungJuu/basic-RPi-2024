@@ -179,6 +179,7 @@
 
             ![연결상태](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi007.png)
 
+            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/e237aee6-1418-4417-9444-b69edbae94b0
 
 - 스텝모터
     - 펄스모양의 전압에 의해 일정 각도(스텝 수)만큼 회전하는 모터
@@ -239,3 +240,4 @@
     - 실습
         - cam01.py
 
+            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
