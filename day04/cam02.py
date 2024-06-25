@@ -5,9 +5,6 @@ import datetime
 
 swPin =  22
 
-oldSw = 0
-newSw = 0
-
 picam2 = Picamera2()
 camera_config = picam2.create_preview_configuration()
 picam2.configure(camera_config)
