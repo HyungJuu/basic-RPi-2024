@@ -230,4 +230,11 @@
 ## 4일차
 - 웹서버
     - 실습
-        - HTML
+        - HTML 추가 &rarr; flask07.py
+
+            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
+        
+- 카메라
+    - 실습
+        - cam01.py
+
