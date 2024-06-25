@@ -217,7 +217,7 @@
             - ? 를 기준으로 key=value 형태로 입력
             - 연결은 & 연산자 사용
 
-                ![실행결과](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi008.png)
+                ![flask06.py 실행결과](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi010.png)
 
 - 모듈설치(아래의 가상환경 생성시 포함)
     ```
@@ -239,7 +239,4 @@
 - 카메라
     - 실습
         - cam01.py
-
-            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
-
         - 스위치 : 스위치 클릭을 통해 현재시간으로 사진 저장 &rarr; cam02.py
