@@ -218,7 +218,7 @@
 
                 ![실행결과](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi008.png)
 
-- 모듈설치
+- 모듈설치(아래의 가상환경 생성시 포함)
     ```
     > pip install flask
     ```
@@ -231,6 +231,7 @@
 - 웹서버
     - 실습
         - HTML 추가 &rarr; flask07.py
+            - 웹 / 모바일 가능
 
             https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
         
