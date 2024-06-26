@@ -234,9 +234,31 @@
         - HTML 추가 &rarr; flask07.py
             - 웹 / 모바일 가능(모바일 연결시 같은공유기로 접속)
 
-            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
+                https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
         
 - 카메라
     - 실습
         - cam01.py
         - 스위치 : 스위치 클릭을 통해 현재시간으로 사진 저장 &rarr; cam02.py
+
+- FND 4Digit 7세그먼트
+    - 그림의 화살표 방향으로 전류가 흐른다
+
+        <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi011.png" width="450" alt="FND 4Digit 7세그먼트">
+
+        - 공통 음극(Common Cathod) 방식
+            - 공통단자인 COM이 GND(-)에 연결됨
+            - 불을 켜기 위해서는 3V(+)에 연결
+                
+                <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi012.png" width="500" alt="공통 음극">
+                
+        - 공통 양극(Common Anode) 방식
+            - 공통단자인 COM이 3V(+)에 연결됨
+            - 불을 켜기 위해서는 GND(-)에 연결
+
+                <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi013.png" width="500" alt="공통 양극">
+    
+    - 실습
+        - FND : 1초마다 0 ~ 9까지 출력 &rarr; fnd01.py
+
+          https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7512b97a-90f2-425c-bd6b-c90e2ce6955f
