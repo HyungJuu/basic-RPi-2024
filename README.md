@@ -228,7 +228,7 @@
     > python -m venv --system-site-packages env
     ```
 
-## 4일차
+## 4일차(24.06.25)
 - 웹서버
     - 실습
         - HTML 추가 &rarr; flask07.py
@@ -262,3 +262,13 @@
         - FND : 1초마다 0 ~ 9까지 출력 &rarr; fnd01.py
 
           https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7512b97a-90f2-425c-bd6b-c90e2ce6955f
+
+## 5일차(24.06.26)
+- FND 4Digit 7세그먼트
+    - 실습(이어서)
+        - FND + 스위치 : 스위치 클릭시 1 ~ 0까지 카운트(1digit만 사용) &rarr; fnd02.py
+        - FND + 스위치 : 스위치 클릭으로 9999까지 카운트(4digit 모두 사용) &rarr; fnd03.py (출력형식 : 30 &rarr; 30)
+        - FND + 스위치 : 스위치 클릭으로 9999까지 카운트(4digit 모두 사용) &rarr; fnd04.py (출력형식 : 30 &rarr; 0030)
+        - FND : 1초마다 카운트 자동증가  
+        &rarr; fnd05.py(두자리로 숫자가 커지면 동시에 보여주는게 아니라 순서대로 보여줌)  
+        &rarr; fnd06.py(동시출력은 하지만 잘안보임)  둘다 수정필요
