@@ -41,7 +41,7 @@ def display(digit, number):
 
     for segment in numbers[number]:
         GPIO.output(segment, True)  # 숫자에 해당하는 세그먼트 핀 활성화
-    
+
     time.sleep(0.005)  # 각 숫자가 표시될 시간을 짧게 설정
 
     GPIO.output(coms[digit], True)  # 해당 자리의 공통 핀 비활성화

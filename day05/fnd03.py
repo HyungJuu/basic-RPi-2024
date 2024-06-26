@@ -38,7 +38,6 @@ for com in coms:
 # 숫자 출력 함수
 def display(digit, number):
     GPIO.output(segments, False) # 모든 세그먼트 핀 끄기
-    # 해당 자리의 공통 음극 핀 켜기 (Low 상태)
     GPIO.output(coms[digit], False) # 해당 자리의 공통 음극 핀 켜기
     # 숫자의 세그먼트 켜기
     for segment in numbers[number]:

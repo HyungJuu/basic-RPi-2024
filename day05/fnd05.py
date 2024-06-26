@@ -2,10 +2,8 @@
 import RPi.GPIO as GPIO
 import time
 
-# 세그먼트 핀 정의
 segments = [20, 16, 13, 19, 26, 21, 6]
 
-# 각 숫자에 대응하는 세그먼트 패턴 정의
 num0 = [20, 16, 13, 19, 26, 21]  # 숫자 0
 num1 = [16, 13]  # 숫자 1
 num2 = [20, 16, 6, 26, 19]  # 숫자 2
@@ -17,11 +15,10 @@ num7 = [20, 16, 13, 21]  # 숫자 7
 num8 = [20, 16, 13, 19, 26, 21, 6]  # 숫자 8
 num9 = [20, 16, 13, 19, 21, 6]  # 숫자 9
 
-# 숫자에 따른 세그먼트 패턴 리스트
 numbers = [num0, num1, num2, num3, num4, num5, num6, num7, num8, num9]
 
 # 공통 핀 설정
-coms = [24, 23, 25, 18]  # 4자리 공통 음극 핀
+coms = [24, 23, 25, 18]
 
 # GPIO 초기화
 GPIO.setmode(GPIO.BCM)
@@ -40,7 +37,7 @@ def display(digit, number):
     # 숫자의 세그먼트 켜기
     for segment in numbers[number]:
         GPIO.output(segment, True)
-        time.sleep(0.005)
+        time.sleep(0.001)
     time.sleep(0.5)
     # 자리 끄기
     GPIO.output(coms[digit], True)
