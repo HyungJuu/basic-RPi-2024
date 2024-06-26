@@ -259,9 +259,9 @@
                 <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi013.png" width="500" alt="공통 양극">
     
     - 실습
-        - FND : 1초마다 0 ~ 9까지 출력 &rarr; fnd01.py  
-
-        https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/5c22aa05-f749-4e52-b268-64d0ddc7f365
+        - FND : 1초마다 0 ~ 9까지 출력 &rarr; fnd01.py
+            
+            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/bb22e2eb-424e-41cc-bc56-8172d234f001
 
 
 
