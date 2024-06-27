@@ -217,7 +217,7 @@
             - ? 를 기준으로 key=value 형태로 입력
             - 연결은 & 연산자 사용
 
-                ![실행결과](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi008.png)
+                ![flask06.py 실행결과](https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi010.png)
 
 - 모듈설치(아래의 가상환경 생성시 포함)
     ```
@@ -228,16 +228,54 @@
     > python -m venv --system-site-packages env
     ```
 
-## 4일차
+## 4일차(24.06.25)
 - 웹서버
     - 실습
         - HTML 추가 &rarr; flask07.py
-            - 웹 / 모바일 가능
+            - 웹 / 모바일 가능(모바일 연결시 같은공유기로 접속)
 
-            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
+                https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
         
 - 카메라
     - 실습
         - cam01.py
+        - 스위치 : 스위치 클릭을 통해 현재시간으로 사진 저장 &rarr; cam02.py
 
-            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/7a1c396e-3b03-46cb-bcca-ad2811b68673
+- FND 4Digit 7세그먼트
+    - 그림의 화살표 방향으로 전류가 흐른다
+
+        <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi011.png" width="450" alt="FND 4Digit 7세그먼트">
+
+        - 공통 음극(Common Cathod) 방식
+            - 공통단자인 COM이 GND(-)에 연결됨
+            - 불을 켜기 위해서는 3V(+)에 연결
+                
+                <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi012.png" width="500" alt="공통 음극">
+                
+        - 공통 양극(Common Anode) 방식
+            - 공통단자인 COM이 3V(+)에 연결됨
+            - 불을 켜기 위해서는 GND(-)에 연결
+
+                <img src="https://raw.githubusercontent.com/HyungJuu/basic-RPi-2024/main/images/rpi013.png" width="500" alt="공통 양극">
+    
+    - 실습
+        - FND : 1초마다 0 ~ 9까지 출력 &rarr; fnd01.py
+            
+            https://github.com/HyungJuu/basic-RPi-2024/assets/158007420/bb22e2eb-424e-41cc-bc56-8172d234f001
+
+
+
+## 5일차(24.06.26)
+- FND 4Digit 7세그먼트
+    - 실습(이어서)
+        - FND + 스위치 : 스위치 클릭시 1 ~ 0까지 카운트(1digit만 사용) &rarr; fnd02.py
+        - FND + 스위치 : 스위치 클릭으로 9999까지 카운트(4digit 모두 사용) &rarr; fnd03.py (출력형식 : 30 &rarr; 30)
+        - FND + 스위치 : 스위치 클릭으로 9999까지 카운트(4digit 모두 사용) &rarr; fnd04.py (출력형식 : 30 &rarr; 0030)
+        - FND : 1초마다 카운트 자동증가  
+        &rarr; fnd05.py(두자리로 숫자가 커지면 동시에 보여주는게 아니라 순서대로 보여줌)  
+        &rarr; fnd06.py(동시출력은 하지만 잘안보임)  둘다 수정필요
+
+## 6일차(24,06,27)
+- FND 4Digit 7세그먼트
+    - 실습(이어서)
+        - fnd07.py ~ fnd10.py
