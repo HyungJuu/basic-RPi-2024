@@ -279,3 +279,29 @@
 - FND 4Digit 7세그먼트
     - 실습(이어서)
         - fnd07.py ~ fnd10.py
+
+- PyQt5
+    
+    ```
+    > sudo apt install qttools5-dev-tools
+    ```
+
+    - 기본 사용방법
+        ```python
+        import sys
+        from PyQt5.QtWidgets import  *
+        from PyQt5 import uic
+
+        form_class = uic.loadUiType("./파일명.ui")[0]
+ 
+        class WindowClass(QMainWindow, form_class):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
+        if __name__ == "__main__":
+            app = QApplication(sys.argv)
+            myWindow = WindowClass()
+            myWindow.show()
+            app.exec_()
+        ```
+        - 이벤트 함수
