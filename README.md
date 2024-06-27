@@ -274,3 +274,34 @@
         - FND : 1초마다 카운트 자동증가  
         &rarr; fnd05.py(두자리로 숫자가 커지면 동시에 보여주는게 아니라 순서대로 보여줌)  
         &rarr; fnd06.py(동시출력은 하지만 잘안보임)  둘다 수정필요
+
+## 6일차(24,06,27)
+- FND 4Digit 7세그먼트
+    - 실습(이어서)
+        - fnd07.py ~ fnd10.py
+
+- PyQt5
+    
+    ```
+    > sudo apt install qttools5-dev-tools
+    ```
+
+    - 기본 사용방법
+        ```python
+        import sys
+        from PyQt5.QtWidgets import  *
+        from PyQt5 import uic
+
+        form_class = uic.loadUiType("./파일명.ui")[0]
+ 
+        class WindowClass(QMainWindow, form_class):
+            def __init__(self):
+                super().__init__()
+                self.setupUi(self)
+        if __name__ == "__main__":
+            app = QApplication(sys.argv)
+            myWindow = WindowClass()
+            myWindow.show()
+            app.exec_()
+        ```
+        - 이벤트 함수
