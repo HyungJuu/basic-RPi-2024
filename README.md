@@ -317,3 +317,13 @@
 - 10 -> secondwindow.py => ControlLed.py  
 	thirdwindow.py => CountNum.py
 - 11 -> 키보드 연동 피아노 건반 추가
+
+## 8일차(24.07.01)
+PirSensor -> 카메라 기능(스위치랑 버튼)
+PirSensor1 -> 사진찍으면 바로 이미지 로드됨
+PirSensor2 -> 초음파센서로 거리측정 및 표시
+PirSensor3 -> 적외선 센서가 감지되면 사진촬영 및 거리측정
+
+- 최종
+    - gui12.py | ControlLed.py | CountNum.py | DigitalSound.py | PirSensor3.py
+    - gui03.ui | secondwindow.ui | thirdwindow.ui | fourthwindow.ui | fifthwindow.ui
