@@ -10,24 +10,20 @@ fndSegs = [20, 16, 13, 19, 26, 21, 6] # a ~ f 핀
 fndSels = [24, 25, 23, 18] # fnd 선택 핀
 switch = 12
 
-#piezoPin = 5
 melody = [262, 294, 330, 349, 392, 440, 494, 524]
 
 GPIO.setmode(GPIO.BCM)
 
 # 7세그먼트 핀 초기화
-for fndSeg in fndSegs:
-	GPIO.setup(fndSeg, GPIO.OUT)
-	GPIO.output(fndSeg, 0)
+def setup_fnd_pins():
+	for fndSeg in fndSegs:
+		GPIO.setup(fndSeg, GPIO.OUT)
+		GPIO.output(fndSeg, 0)
 
-for fndSel in fndSels:
-	GPIO.setup(fndSel, GPIO.OUT)
-	GPIO.output(fndSel, 1)
-
-GPIO.setup(switch, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-#GPIO.setup(piezoPin, GPIO.OUT)
-
-#Buzz = GPIO.PWM(piezoPin, 440)
+	for fndSel in fndSels:
+		GPIO.setup(fndSel, GPIO.OUT)
+		GPIO.output(fndSel, 1)
+	GPIO.setup(switch, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 def display(digit, fndData):
 	for i in range(4):
@@ -70,6 +66,8 @@ class thirdwindow(QDialog, form_thirdwindow):
 		self.switch_timer.timeout.connect(self.checkSwitch)
 		self.switch_timer.start(100)
 
+		setup_fnd_pins()
+
 	# gui 상의 스위치
 	def fndOut(self):
 		self.buzzer.start(50)
@@ -91,7 +89,7 @@ class thirdwindow(QDialog, form_thirdwindow):
 		display_count(count)
 
 	def Back(self):
+		self.timer.stop()
+		self.switch_timer.stop()
+		GPIO.cleanup(fndSegs + fndSels + [switch])
 		self.close() # 창닫기
-
-
-

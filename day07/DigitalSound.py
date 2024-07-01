@@ -8,6 +8,8 @@ import time
 melody = [262, 294, 330, 349, 392, 440, 494, 524]
 melody1 = [277, 311, 370, 415, 466]
 
+GPIO.setmode(GPIO.BCM)
+
 form_fourthwindow = uic.loadUiType("./fourthwindow.ui")[0]
 
 class fourthwindow(QDialog, form_fourthwindow):
@@ -85,6 +87,7 @@ class fourthwindow(QDialog, form_fourthwindow):
 		self.Sound(melody1[4])
 
 	def Back(self):
+#		GPIO.cleanup()
 		self.close()
 
 	def keyPressEvent(self, event):

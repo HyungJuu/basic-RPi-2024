@@ -5,17 +5,18 @@ import RPi.GPIO as GPIO
 
 ledPins = [4, 17, 22]
 
-GPIO.setmode(GPIO.BCM)
 # Led 핀 초기화
-for ledPin in ledPins:
-	GPIO.setup(ledPin, GPIO.OUT)
-	GPIO.output(ledPin, 1)
 
 form_secondwindow = uic.loadUiType("./secondwindow.ui")[0]
 
 class secondwindow(QDialog, form_secondwindow):
 	def __init__(self):
 		super(secondwindow, self).__init__()
+		GPIO.setmode(GPIO.BCM)
+		for ledPin in ledPins:
+			GPIO.setup(ledPin, GPIO.OUT)
+			GPIO.output(ledPin, 1)
+
 		self.setupUi(self)
 		self.show() # 두번째창 열기
 
@@ -51,4 +52,5 @@ class secondwindow(QDialog, form_secondwindow):
 		GPIO.output(ledPins, 1)
 
 	def Back(self):
+		GPIO.cleanup(ledPins)
 		self.close() # 창닫기

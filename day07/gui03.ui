@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>309</width>
-    <height>474</height>
+    <width>321</width>
+    <height>347</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,8 +43,8 @@
    <widget class="QPushButton" name="btn_exit">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>340</y>
+      <x>200</x>
+      <y>230</y>
       <width>101</width>
       <height>30</height>
      </rect>
@@ -76,8 +76,8 @@
    <widget class="QPushButton" name="btn_sound">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>210</y>
+      <x>170</x>
+      <y>70</y>
       <width>131</width>
       <height>51</height>
      </rect>
@@ -86,13 +86,26 @@
      <string>Digital Sound</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_pir">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>140</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pir Sensor</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>309</width>
+     <width>321</width>
      <height>28</height>
     </rect>
    </property>

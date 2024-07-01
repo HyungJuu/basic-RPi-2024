@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 pirPin = 24
-led = 20
+led = 22
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pirPin, GPIO.IN)
